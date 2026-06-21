@@ -1,5 +1,6 @@
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Perf } from "r3f-perf";
+import { KazeModel } from "./components/KazeModel";
 
 const Experience = () => {
 	return (
@@ -7,10 +8,17 @@ const Experience = () => {
 			<Perf position="top-left" />
 			<OrbitControls />
 
-			<mesh>
-				<boxGeometry args={[1, 1, 1]} />
-				<meshStandardMaterial color="red" />
-			</mesh>
+			<PerspectiveCamera makeDefault position={[0, 2, 20]} fov={45} />
+
+			<ambientLight intensity={0.4} />
+			<directionalLight
+				position={[5, 1, 2.6]}
+				intensity={2}
+				color="#FFF5E0"
+				castShadow
+			/>
+
+			<KazeModel />
 		</>
 	);
 };
