@@ -1,10 +1,12 @@
+import { Canvas } from "@react-three/fiber";
 import "./App.css";
+import Experience from "./Experience";
 
 function App() {
 	return (
-		<div className="flex flex-col items-center justify-center h-screen">
-			<h1 className="text-4xl font-bold">Hello World</h1>
-		</div>
+		<Canvas camera={{ position: [0, 0, 10] }}>
+			<Experience />
+		</Canvas>
 	);
 }
 
