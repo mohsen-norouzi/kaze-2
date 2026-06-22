@@ -4,6 +4,7 @@ import { ContactPlate } from "./ContactPlate";
 import { MainPlate } from "./MainPlate";
 import { ProjectPlate } from "./ProjectPlate";
 import { ResumePlate } from "./ResumePlate";
+import { TogglePlate } from "./TogglePlate";
 
 useGLTF.preload("/models/kaze.glb");
 
@@ -28,6 +29,8 @@ export const KazeModel = () => {
 			<ContactPlate plate={nodes.plate_small} />
 
 			<ProjectPlate plate={nodes.plate_thin} />
+
+			<TogglePlate plate={nodes.diamond} />
 		</group>
 	);
 };
