@@ -1,4 +1,4 @@
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 import { KazeModel } from "./components/KazeModel";
 import { CAMERA, WINDOW_LIGHT } from "./constants/SceneConstants";
@@ -22,7 +22,7 @@ const Experience = () => {
 	return (
 		<>
 			<Perf position="top-left" />
-			<OrbitControls />
+			{/* <OrbitControls /> */}
 
 			{/* <PerspectiveCamera makeDefault position={[0, 2, 20]} fov={45} /> */}
 			<PerspectiveCamera
