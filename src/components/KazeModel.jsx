@@ -1,25 +1,33 @@
 import { useGLTF } from "@react-three/drei";
 
+import { ContactPlate } from "./ContactPlate";
+import { MainPlate } from "./MainPlate";
+import { ProjectPlate } from "./ProjectPlate";
+import { ResumePlate } from "./ResumePlate";
+
 useGLTF.preload("/models/kaze.glb");
 
 export const KazeModel = () => {
 	const { nodes } = useGLTF("/kaze.glb");
 
-	console.log(nodes);
-
 	return (
 		<group rotation={[0, Math.PI / 2, 0]}>
-			<mesh geometry={nodes.wall.geometry} receiveShadow>
-				<meshStandardMaterial color="#e8e2d5" roughness={1} metalness={0} />
-			</mesh>
-
 			<mesh geometry={nodes.floor.geometry} receiveShadow>
 				<meshStandardMaterial color="#e8e2d5" roughness={1} metalness={0} />
 			</mesh>
 
-			<mesh geometry={nodes.plate_main.geometry} castShadow receiveShadow>
-				<meshStandardMaterial color="#e8e2d5" roughness={0.95} metalness={0} />
+			{/* this is the same floor, but should be a wall but rotated 180 degrees*/}
+			<mesh geometry={nodes.wall.geometry} receiveShadow>
+				<meshStandardMaterial color="#e8e2d5" roughness={1} metalness={0} />
 			</mesh>
+
+			<MainPlate plate={nodes.plate_main} />
+
+			<ResumePlate plate={nodes.plate_small} />
+
+			<ContactPlate plate={nodes.plate_small} />
+
+			<ProjectPlate plate={nodes.plate_thin} />
 		</group>
 	);
 };
