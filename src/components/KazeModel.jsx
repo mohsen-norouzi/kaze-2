@@ -29,6 +29,7 @@ export const KazeModel = () => {
 			<ContactPlate plate={nodes.plate_small} />
 
 			<ProjectPlate plate={nodes.plate_thin} />
+			<ProjectPlate plate={nodes.plate_thin} position={[-1.5, -2, -1.3]} />
 
 			<TogglePlate plate={nodes.diamond} />
 		</group>

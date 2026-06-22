@@ -3,12 +3,12 @@ import { useKazeString } from "../hooks/useKazeString";
 
 const SHOW_CONTROLS = false;
 
-export const ProjectPlate = ({ plate }) => {
+export const ProjectPlate = ({ plate, position = [0, 0, 0] }) => {
 	const { geometry, material } = useKazeString();
 
-	const { position, stringOffset } = useControls("Project Plate", {
-		position: {
-			value: [0, 0, 0],
+	const { platePosition, stringOffset } = useControls("Project Plate", {
+		platePosition: {
+			value: position,
 			min: -50,
 			max: 50,
 			step: 0.01,
@@ -24,7 +24,7 @@ export const ProjectPlate = ({ plate }) => {
 	});
 
 	return (
-		<group position={position}>
+		<group position={platePosition}>
 			<mesh geometry={plate.geometry} castShadow receiveShadow>
 				<meshStandardMaterial color="#e8e2d5" roughness={0.95} metalness={0} />
 			</mesh>

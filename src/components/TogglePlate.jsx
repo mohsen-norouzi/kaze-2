@@ -11,14 +11,14 @@ export const TogglePlate = ({ plate }) => {
 			value: [0, 0, 0],
 			min: -50,
 			max: 50,
-			step: 0.01,
+			step: 0.001,
 			render: () => SHOW_CONTROLS,
 		},
 		stringOffset: {
-			value: [-0.46, -0.45, -5.05],
+			value: [-0.45, 1.96, -5.07],
 			min: -50,
 			max: 50,
-			step: 0.01,
+			step: 0.001,
 			render: () => SHOW_CONTROLS,
 		},
 	});
@@ -34,7 +34,12 @@ export const TogglePlate = ({ plate }) => {
 				<meshStandardMaterial color="#e8e2d5" roughness={0.95} metalness={0} />
 			</mesh>
 
-			<mesh geometry={geometry} position={stringOffset} material={material}>
+			<mesh
+				geometry={geometry}
+				position={stringOffset}
+				material={material}
+				scale={0.5}
+			>
 				<meshStandardMaterial color="#b1b1b1" roughness={0.95} metalness={0} />
 			</mesh>
 		</group>
