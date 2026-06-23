@@ -10,6 +10,8 @@ import { TogglePlate } from "./TogglePlate";
 
 useGLTF.preload("/models/kaze.glb");
 
+const SHOW_CONTROLS = false;
+
 export const KazeModel = () => {
 	const { nodes } = useGLTF("/kaze.glb");
 
@@ -19,12 +21,14 @@ export const KazeModel = () => {
 			min: -50,
 			max: 50,
 			step: 0.01,
+			render: () => SHOW_CONTROLS,
 		},
 		windowRotation: {
 			value: [0, 0, 0],
 			min: -50,
 			max: 50,
 			step: 0.01,
+			render: () => SHOW_CONTROLS,
 		},
 	});
 
