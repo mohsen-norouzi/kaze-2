@@ -2,7 +2,7 @@ import { Text } from "@react-three/drei";
 import { useControls } from "leva";
 import { useKazeString } from "../hooks/useKazeString";
 
-const SHOW_CONTROLS = true;
+const SHOW_CONTROLS = false;
 
 export const MainPlate = ({ plate }) => {
 	const { geometry, material } = useKazeString();
@@ -44,7 +44,13 @@ export const MainPlate = ({ plate }) => {
 	return (
 		<group position={position}>
 			<mesh geometry={plate.geometry} castShadow receiveShadow>
-				<meshStandardMaterial color="#e8e2d5" roughness={0.95} metalness={0} />
+				<meshStandardMaterial
+					color="#fff4e2"
+					roughness={1}
+					metalness={0}
+					emissiveIntensity={0.05}
+					emissive="#fff4e2"
+				/>
 			</mesh>
 
 			<mesh geometry={geometry} position={stringOffset} material={material}>
@@ -56,7 +62,7 @@ export const MainPlate = ({ plate }) => {
 				rotation={[0, Math.PI / -2, 0]}
 				fontSize={0.5}
 				color="#2e2e2e"
-				font="/fonts/Audrey-Normal.otf"
+				font="/fonts/Audrey.otf"
 			>
 				MOHSEN
 			</Text>

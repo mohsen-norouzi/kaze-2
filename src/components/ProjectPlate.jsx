@@ -26,7 +26,13 @@ export const ProjectPlate = ({ plate, position = [0, 0, 0] }) => {
 	return (
 		<group position={platePosition}>
 			<mesh geometry={plate.geometry} castShadow receiveShadow>
-				<meshStandardMaterial color="#e8e2d5" roughness={0.95} metalness={0} />
+				<meshStandardMaterial
+					color="#fff4e2"
+					roughness={1}
+					metalness={0}
+					emissiveIntensity={0.1}
+					emissive="#fff4e2"
+				/>
 			</mesh>
 
 			<mesh geometry={geometry} position={stringOffset} material={material}>
